@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kenou Handyman LLC — Premium Tile & Home Services</title>
+  <meta name="description" content="Kenou Handyman LLC specializes in professional tile installation and premium home services in Southwest Florida. Call (239) 778-5481 for a free estimate." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #c8a96e;
+      --gold-light: #e8d5a8;
+      --dark: #0e0e0e;
+      --dark-2: #161616;
+      --dark-3: #1f1f1f;
+      --gray: #888;
+      --light: #f5f2ed;
+      --white: #ffffff;
+      --accent: #c8a96e;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--dark);
+      color: var(--light);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.4rem 3rem;
+      background: linear-gradient(to bottom, rgba(14,14,14,.97), transparent);
+      transition: background .3s;
+    }
+    nav.scrolled { background: rgba(14,14,14,.97); border-bottom: 1px solid rgba(200,169,110,.15); }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .85rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(245,242,237,.7);
+      text-decoration: none;
+      transition: color .25s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .8rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--dark);
+      background: var(--gold);
+      padding: .6rem 1.4rem;
+      text-decoration: none;
+      transition: background .25s, transform .2s;
+    }
+    .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: var(--gold); display: block; transition: .3s; }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('PHOTO-2026-03-03-12-51-02.jpg');
+      background-size: cover;
+      background-position: center 30%;
+      transform: scale(1.05);
+      animation: heroZoom 12s ease-out forwards;
+    }
+    @keyframes heroZoom { to { transform: scale(1); } }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(14,14,14,.15) 0%,
+        rgba(14,14,14,.4) 40%,
+        rgba(14,14,14,.92) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 3rem 6rem;
+      max-width: 800px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp .9s .4s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .8rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.2rem, 7vw, 6.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(245,242,237,.75);
+      max-width: 480px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-primary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .85rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: var(--dark);
+      padding: .9rem 2.2rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: background .25s, transform .2s;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    .btn-outline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .85rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      border: 1px solid rgba(200,169,110,.5);
+      color: var(--gold-light);
+      padding: .9rem 2.2rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color .25s, color .25s, background .25s;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--white); background: rgba(200,169,110,.1); }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--dark-2);
+      border-top: 1px solid rgba(200,169,110,.2);
+      border-bottom: 1px solid rgba(200,169,110,.2);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      divide-x: 1px solid red;
+    }
+
+    .stat-item {
+      padding: 2rem;
+      text-align: center;
+      border-right: 1px solid rgba(200,169,110,.12);
+    }
+    .stat-item:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .75rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-top: .4rem;
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 7rem 3rem; }
+
+    .section-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .75rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .8rem;
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+    }
+    .section-eyebrow::before {
+      content: '';
+      width: 30px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+    }
+    .section-title em { font-style: italic; color: var(--gold-light); }
+
+    .section-body {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(245,242,237,.65);
+      line-height: 1.8;
+      max-width: 560px;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--dark-2);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-image-wrap {
+      position: relative;
+    }
+
+    .about-image-wrap img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      width: 130px;
+      height: 130px;
+      background: var(--gold);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .about-badge strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--dark);
+      line-height: 1;
+    }
+    .about-badge span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .65rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--dark-2);
+    }
+
+    .about-text { }
+
+    .about-features {
+      margin-top: 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+
+    .feature-item {
+      padding: 1.2rem;
+      border: 1px solid rgba(200,169,110,.15);
+      background: rgba(200,169,110,.04);
+      transition: border-color .25s, background .25s;
+    }
+    .feature-item:hover { border-color: rgba(200,169,110,.4); background: rgba(200,169,110,.08); }
+
+    .feature-icon {
+      font-size: 1.4rem;
+      margin-bottom: .6rem;
+    }
+
+    .feature-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .9rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: .3rem;
+    }
+
+    .feature-desc {
+      font-size: .82rem;
+      color: rgba(245,242,237,.5);
+      line-height: 1.6;
+    }
+
+    /* ── SERVICES ── */
+    #services {
+      background: var(--dark);
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .services-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 4rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: rgba(200,169,110,.12);
+    }
+
+    .service-card {
+      background: var(--dark-2);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: background .3s;
+    }
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--gold);
+      transition: width .4s ease;
+    }
+    .service-card:hover::after { width: 100%; }
+    .service-card:hover { background: var(--dark-3); }
+
+    .service-card.featured {
+      grid-column: span 2;
+      background: linear-gradient(135deg, var(--dark-3) 0%, #1a1608 100%);
+      border: 1px solid rgba(200,169,110,.2);
+    }
+
+    .service-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      font-weight: 300;
+      color: rgba(200,169,110,.12);
+      line-height: 1;
+      margin-bottom: .5rem;
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: .8rem;
+    }
+
+    .service-desc {
+      font-size: .88rem;
+      font-weight: 300;
+      color: rgba(245,242,237,.55);
+      line-height: 1.7;
+    }
+
+    .service-badge {
+      display: inline-block;
+      margin-top: 1.2rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .7rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(200,169,110,.4);
+      padding: .25rem .7rem;
+    }
+
+    /* ── GALLERY ── */
+    #gallery {
+      background: var(--dark-2);
+      padding-bottom: 5rem;
+    }
+
+    .gallery-header {
+      max-width: 1300px;
+      margin: 0 auto 3rem;
+    }
+
+    .gallery-grid {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: auto;
+      gap: 8px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+    .gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(14,14,14,0);
+      transition: background .3s;
+    }
+    .gallery-item:hover::after { background: rgba(14,14,14,.3); }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .6s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.04); }
+
+    .g1 { grid-column: 1 / 6; grid-row: 1; height: 360px; }
+    .g2 { grid-column: 6 / 9; grid-row: 1; height: 360px; }
+    .g3 { grid-column: 9 / 13; grid-row: 1; height: 360px; }
+    .g4 { grid-column: 1 / 5; grid-row: 2; height: 300px; }
+    .g5 { grid-column: 5 / 9; grid-row: 2; height: 300px; }
+    .g6 { grid-column: 9 / 13; grid-row: 2; height: 300px; }
+
+    /* ── PROCESS ── */
+    #process {
+      background: var(--dark);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .process-steps {
+      margin-top: 4rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      position: relative;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 2.2rem;
+      left: 12%;
+      right: 12%;
+      height: 1px;
+      background: linear-gradient(to right, var(--gold), rgba(200,169,110,.2), var(--gold));
+    }
+
+    .step {
+      text-align: center;
+      padding: 0 1.5rem;
+      position: relative;
+    }
+
+    .step-num {
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--gold);
+      background: var(--dark);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+
+    .step-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .95rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: .6rem;
+    }
+
+    .step-desc {
+      font-size: .82rem;
+      font-weight: 300;
+      color: rgba(245,242,237,.5);
+      line-height: 1.65;
+    }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials {
+      background: var(--dark-2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #testimonials::before {
+      content: '"';
+      position: absolute;
+      top: -2rem;
+      left: 2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20rem;
+      color: rgba(200,169,110,.04);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .testimonials-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .testimonial-card {
+      background: var(--dark);
+      border: 1px solid rgba(200,169,110,.1);
+      padding: 2rem;
+      transition: border-color .3s, transform .3s;
+    }
+    .testimonial-card:hover { border-color: rgba(200,169,110,.35); transform: translateY(-4px); }
+
+    .stars { color: var(--gold); font-size: 1rem; margin-bottom: 1rem; letter-spacing: .1em; }
+
+    .testimonial-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: rgba(245,242,237,.8);
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonial-author {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .8rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .testimonial-location {
+      font-size: .78rem;
+      color: var(--gray);
+      margin-top: .2rem;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--dark);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      min-height: 600px;
+    }
+
+    .contact-left {
+      padding: 6rem 4rem;
+      background: linear-gradient(135deg, #0e0e0e 0%, #1a1608 100%);
+      border-right: 1px solid rgba(200,169,110,.15);
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      margin-top: 2.5rem;
+    }
+
+    .contact-detail-icon {
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(200,169,110,.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      color: var(--gold);
+    }
+
+    .contact-detail-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .7rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: .3rem;
+    }
+
+    .contact-detail-value {
+      font-size: 1rem;
+      color: var(--white);
+      font-weight: 400;
+      text-decoration: none;
+    }
+    a.contact-detail-value:hover { color: var(--gold); }
+
+    .contact-right {
+      padding: 6rem 4rem;
+      background: var(--dark-2);
+    }
+
+    .form-group {
+      margin-bottom: 1.4rem;
+    }
+
+    .form-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .72rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--gray);
+      display: block;
+      margin-bottom: .5rem;
+    }
+
+    .form-control {
+      width: 100%;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(200,169,110,.15);
+      color: var(--white);
+      padding: .85rem 1rem;
+      font-family: 'Barlow', sans-serif;
+      font-size: .92rem;
+      outline: none;
+      transition: border-color .25s;
+    }
+    .form-control:focus { border-color: var(--gold); }
+    .form-control::placeholder { color: rgba(245,242,237,.25); }
+
+    textarea.form-control { resize: vertical; min-height: 110px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--gold);
+      color: var(--dark);
+      border: none;
+      padding: 1rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .88rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background .25s, transform .2s;
+      margin-top: .5rem;
+    }
+    .submit-btn:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(200,169,110,.1);
+      padding: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+    .footer-logo span { color: var(--gold); }
+
+    .footer-copy {
+      font-size: .78rem;
+      color: rgba(245,242,237,.35);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .footer-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(245,242,237,.45);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(14,14,14,.96);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s;
+    }
+    .lightbox.active { opacity: 1; pointer-events: all; }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border: 1px solid rgba(200,169,110,.2);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 2rem; right: 2rem;
+      width: 44px; height: 44px;
+      background: rgba(200,169,110,.15);
+      border: 1px solid rgba(200,169,110,.3);
+      color: var(--gold);
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s;
+    }
+    .lightbox-close:hover { background: rgba(200,169,110,.3); }
+
+    /* ── FLOATING CTA ── */
+    .float-cta {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 90;
+      background: var(--gold);
+      color: var(--dark);
+      padding: .9rem 1.6rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      text-decoration: none;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .85rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      box-shadow: 0 8px 32px rgba(200,169,110,.35);
+      transition: background .25s, transform .2s, box-shadow .2s;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: floatIn .5s 1.5s forwards;
+    }
+    @keyframes floatIn { to { opacity: 1; transform: translateY(0); } }
+    .float-cta:hover { background: var(--gold-light); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(200,169,110,.5); }
+    .float-cta .phone-icon { font-size: 1rem; }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 1.5rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      #about { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 1.5rem; }
+      .about-image-wrap img { height: 320px; }
+      .about-badge { right: 0; bottom: -1rem; }
+
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card.featured { grid-column: span 1; }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+      }
+      .g1,.g2,.g3,.g4,.g5,.g6 { grid-column: auto; grid-row: auto; height: 200px; }
+
+      .process-steps { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+      .process-steps::before { display: none; }
+
+      .testimonials-grid { grid-template-columns: 1fr; }
+
+      #contact { grid-template-columns: 1fr; }
+      .contact-left, .contact-right { padding: 3rem 1.5rem; }
+
+      footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+
+      section { padding: 4rem 1.5rem; }
+      .hero-content { padding: 0 1.5rem 4rem; }
+      .stats-bar { grid-template-columns: 1fr 1fr; }
+
+      .float-cta { bottom: 1rem; right: 1rem; padding: .8rem 1.2rem; }
+    }
+
+    /* Success message */
+    .success-msg {
+      display: none;
+      background: rgba(200,169,110,.12);
+      border: 1px solid rgba(200,169,110,.4);
+      color: var(--gold-light);
+      padding: 1rem 1.5rem;
+      text-align: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      letter-spacing: .08em;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">Kenou<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="tel:2397785481" class="nav-cta">Call Now</a>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu" style="display:none;position:fixed;inset:0;background:rgba(14,14,14,.98);z-index:99;padding:6rem 2rem 3rem;flex-direction:column;gap:2rem;">
+  <ul style="list-style:none;display:flex;flex-direction:column;gap:1.8rem;">
+    <li><a href="#about" onclick="toggleMenu()" style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--white);text-decoration:none;">About</a></li>
+    <li><a href="#services" onclick="toggleMenu()" style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--white);text-decoration:none;">Services</a></li>
+    <li><a href="#gallery" onclick="toggleMenu()" style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--white);text-decoration:none;">Gallery</a></li>
+    <li><a href="#process" onclick="toggleMenu()" style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--white);text-decoration:none;">Process</a></li>
+    <li><a href="#contact" onclick="toggleMenu()" style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--white);text-decoration:none;">Contact</a></li>
+  </ul>
+  <a href="tel:2397785481" style="margin-top:auto;background:var(--gold);color:var(--dark);padding:1rem 2rem;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:.9rem;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;">(239) 778-5481</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Premium Tile &amp; Home Services</div>
+    <h1 class="hero-title">
+      Crafted with<br><em>Precision</em><br>Built to Last
+    </h1>
+    <p class="hero-sub">Kenou Handyman LLC delivers master-level tile installation and comprehensive home improvement services across Southwest Florida.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Get Free Estimate</a>
+      <a href="tel:2397785481" class="btn-outline">📞 (239) 778-5481</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item reveal">
+    <div class="stat-num">10+</div>
+    <div class="stat-label">Years Experience</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-num">500+</div>
+    <div class="stat-label">Projects Completed</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-num">100%</div>
+    <div class="stat-label">Client Satisfaction</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-num">5★</div>
+    <div class="stat-label">Average Rating</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-image-wrap reveal">
+    <img src="PHOTO-2026-03-03-12-51-01[1].jpg" alt="Professional tile installation by Kenou Handyman LLC" />
+    <div class="about-badge">
+      <strong>LLC</strong>
+      <span>Licensed &amp; Insured</span>
+    </div>
+  </div>
+  <div class="about-text reveal">
+    <div class="section-eyebrow">Who We Are</div>
+    <h2 class="section-title">Tile is Our<br><em>Passion</em></h2>
+    <p class="section-body">Kenou Handyman LLC was built on a simple belief: every home deserves exceptional craftsmanship. We specialize in professional tile installation — from luxurious marble-look porcelain to intricate mosaic accent work — and bring that same precision to every home service we offer.</p>
+    <p class="section-body" style="margin-top:1rem;">Serving Naples and Southwest Florida, we combine artisan skill with modern techniques to deliver results that stand the test of time.</p>
+    <div class="about-features">
+      <div class="feature-item">
+        <div class="feature-icon">🏅</div>
+        <div class="feature-name">Tile Specialists</div>
+        <div class="feature-desc">Floor, wall, shower, and decorative tile — we do it all flawlessly.</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🔒</div>
+        <div class="feature-name">Fully Insured</div>
+        <div class="feature-desc">Licensed, bonded, and insured for your complete peace of mind.</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">⏱️</div>
+        <div class="feature-name">On-Time Always</div>
+        <div class="feature-desc">We respect your schedule and complete projects on deadline.</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">💬</div>
+        <div class="feature-name">Clear Communication</div>
+        <div class="feature-desc">Transparent pricing, no surprises, and constant updates.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" style="padding:7rem 3rem;max-width:100%;">
+  <div style="max-width:1300px;margin:0 auto;">
+    <div class="services-header">
+      <div>
+        <div class="section-eyebrow reveal">What We Do</div>
+        <h2 class="section-title reveal">Our <em>Services</em></h2>
+      </div>
+      <p class="section-body reveal" style="max-width:340px;text-align:right;">Tile is our specialty — but we're equipped to handle your full range of home improvement needs.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card featured reveal">
+        <div class="service-num">01</div>
+        <div class="service-icon">🪨</div>
+        <div class="service-name">Tile Installation — Our Specialty</div>
+        <p class="service-desc">From luxurious large-format porcelain to intricate mosaic designs, our tile work is our signature. We handle floor tile, wall tile, shower surrounds, backsplashes, pool decks, and custom feature walls. Every cut is precise, every layout perfectly leveled.</p>
+        <span class="service-badge">⭐ Signature Service</span>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">02</div>
+        <div class="service-icon">🛁</div>
+        <div class="service-name">Bathroom Renovation</div>
+        <p class="service-desc">Full bathroom overhauls including shower builds, vanity installation, and fixture replacement — centered around flawless tile work.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">03</div>
+        <div class="service-icon">🏠</div>
+        <div class="service-name">Flooring</div>
+        <p class="service-desc">Tile, stone, and hard flooring installation throughout entire homes with consistent leveling and seamless transitions.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">04</div>
+        <div class="service-icon">🔧</div>
+        <div class="service-name">General Repairs</div>
+        <p class="service-desc">Drywall, patching, caulking, grout repair, and general home maintenance handled with the same care as our specialty work.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">05</div>
+        <div class="service-icon">🪟</div>
+        <div class="service-name">Interior Finishing</div>
+        <p class="service-desc">Trim, molding, baseboards, and finish carpentry to complement and complete any tile installation project.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">06</div>
+        <div class="service-icon">📐</div>
+        <div class="service-name">Custom Projects</div>
+        <p class="service-desc">Have something unique in mind? We love a challenge. Contact us to discuss your custom home improvement vision.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" style="padding:7rem 0 5rem;">
+  <div class="gallery-header" style="padding:0 3rem;">
+    <div class="section-eyebrow reveal">Our Work</div>
+    <h2 class="section-title reveal">Project <em>Gallery</em></h2>
+    <p class="section-body reveal" style="margin-top:.5rem;">Every photo below is actual work completed by our team. Click to enlarge.</p>
+  </div>
+  <div class="gallery-grid" style="padding:0 3rem;">
+    <div class="gallery-item g1 reveal" onclick="openLightbox('PHOTO-2026-03-03-12-50-59.jpg')">
+      <img src="PHOTO-2026-03-03-12-50-59.jpg" alt="Luxury tile installation project" />
+    </div>
+    <div class="gallery-item g2 reveal" onclick="openLightbox('PHOTO-2026-03-03-12-51-01.jpg')">
+      <img src="PHOTO-2026-03-03-12-51-01.jpg" alt="Marble look floor tile" />
+    </div>
+    <div class="gallery-item g3 reveal" onclick="openLightbox('PHOTO-2026-03-03-12-51-02.jpg')">
+      <img src="PHOTO-2026-03-03-12-51-02.jpg" alt="Wave pattern decorative tile" />
+    </div>
+    <div class="gallery-item g4 reveal" onclick="openLightbox('PHOTO-2026-03-03-12-51-00[1].jpg')">
+      <img src="PHOTO-2026-03-03-12-51-00[1].jpg" alt="Large format stone tile bathroom" />
+    </div>
+    <div class="gallery-item g5 reveal" onclick="openLightbox('PHOTO-2026-03-03-12-50-59[2].jpg')">
+      <img src="PHOTO-2026-03-03-12-50-59[2].jpg" alt="Premium porcelain tile floor" />
+    </div>
+    <div class="gallery-item g6 reveal" onclick="openLightbox('PHOTO-2026-03-03-12-51-00.jpg')">
+      <img src="PHOTO-2026-03-03-12-51-00.jpg" alt="Custom shower tile installation" />
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" style="padding:7rem 3rem;max-width:100%;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:1rem;">
+      <div class="section-eyebrow reveal" style="justify-content:center;">
+        <span style="width:30px;height:1px;background:var(--gold);display:inline-block;"></span>
+        How It Works
+      </div>
+      <h2 class="section-title reveal" style="text-align:center;">Our Simple <em>Process</em></h2>
+    </div>
+    <div class="process-steps">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <div class="step-name">Free Consultation</div>
+        <p class="step-desc">Call or message us. We visit your property, assess the project, and listen to your vision.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <div class="step-name">Detailed Quote</div>
+        <p class="step-desc">We provide a clear, itemized estimate — no hidden fees, no surprises at the end.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <div class="step-name">Expert Execution</div>
+        <p class="step-desc">Our team gets to work with premium materials, precision tools, and masterful technique.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">4</div>
+        <div class="step-name">Final Walkthrough</div>
+        <p class="step-desc">We inspect every detail with you and only close out when you're 100% satisfied.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="testimonials-inner">
+    <div style="text-align:center;">
+      <div class="section-eyebrow reveal" style="justify-content:center;"><span style="width:30px;height:1px;background:var(--gold);display:inline-block;"></span>Client Reviews</div>
+      <h2 class="section-title reveal" style="text-align:center;">What Clients <em>Say</em></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Kenou did an incredible job on our master bathroom. The large-format marble tile is perfectly level and the grout lines are immaculate. We get compliments every time someone visits."</p>
+        <div class="testimonial-author">Maria T.</div>
+        <div class="testimonial-location">Naples, FL</div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Professional, punctual, and the quality is outstanding. They tiled our entire first floor and the result looks like it belongs in a luxury model home. Highly recommend."</p>
+        <div class="testimonial-author">James R.</div>
+        <div class="testimonial-location">Bonita Springs, FL</div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Fair pricing, no surprises, and they cleaned up perfectly every day. The shower tile work is absolutely beautiful. Already have them booked for the guest bath."</p>
+        <div class="testimonial-author">Sandra K.</div>
+        <div class="testimonial-location">Cape Coral, FL</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding:0;">
+  <div class="contact-left">
+    <div class="section-eyebrow reveal">Reach Out</div>
+    <h2 class="section-title reveal">Let's Start<br>Your <em>Project</em></h2>
+    <p class="section-body reveal" style="margin-top:1rem;">Ready to transform your space? Contact us for a free, no-obligation estimate. We respond within 24 hours.</p>
+
+    <div class="contact-detail reveal">
+      <div class="contact-detail-icon">📞</div>
+      <div>
+        <div class="contact-detail-label">Phone</div>
+        <a href="tel:2397785481" class="contact-detail-value">(239) 778-5481</a>
+      </div>
+    </div>
+
+    <div class="contact-detail reveal">
+      <div class="contact-detail-icon">📍</div>
+      <div>
+        <div class="contact-detail-label">Service Area</div>
+        <div class="contact-detail-value">Naples &amp; Southwest Florida</div>
+      </div>
+    </div>
+
+    <div class="contact-detail reveal">
+      <div class="contact-detail-icon">🕐</div>
+      <div>
+        <div class="contact-detail-label">Hours</div>
+        <div class="contact-detail-value">Mon – Sat: 7:00 AM – 6:00 PM</div>
+      </div>
+    </div>
+
+    <div class="contact-detail reveal">
+      <div class="contact-detail-icon">✅</div>
+      <div>
+        <div class="contact-detail-label">Status</div>
+        <div class="contact-detail-value" style="color:var(--gold);">Currently Accepting New Projects</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-right">
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--white);margin-bottom:1.8rem;">Request a Free<br><em style="color:var(--gold-light);">Estimate</em></h3>
+    <form id="contactForm" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="fname">First Name</label>
+          <input class="form-control" type="text" id="fname" name="fname" placeholder="John" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="lname">Last Name</label>
+          <input class="form-control" type="text" id="lname" name="lname" placeholder="Smith" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="phone">Phone Number</label>
+        <input class="form-control" type="tel" id="phone" name="phone" placeholder="(239) 000-0000" required />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="email">Email Address</label>
+        <input class="form-control" type="email" id="email" name="email" placeholder="john@example.com" />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="service">Service Needed</label>
+        <select class="form-control" id="service" name="service">
+          <option value="">Select a service...</option>
+          <option value="tile">Tile Installation</option>
+          <option value="bathroom">Bathroom Renovation</option>
+          <option value="flooring">Flooring</option>
+          <option value="repairs">General Repairs</option>
+          <option value="custom">Custom Project</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="message">Project Details</label>
+        <textarea class="form-control" id="message" name="message" placeholder="Tell us about your project, timeline, and any special requirements..."></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Send Request →</button>
+      <div class="success-msg" id="successMsg">✓ Message sent! We'll contact you within 24 hours.</div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Kenou<span> Handyman LLC</span></div>
+    <div class="footer-copy" style="margin-top:.5rem;">© 2025 Kenou Handyman LLC. All rights reserved.</div>
+  </div>
+  <ul class="footer-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div style="text-align:right;">
+    <div style="font-family:'Barlow Condensed',sans-serif;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gray);margin-bottom:.4rem;">Call Us Today</div>
+    <a href="tel:2397785481" style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--gold);text-decoration:none;">(239) 778-5481</a>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt="Gallery image" />
+</div>
+
+<!-- FLOATING CTA -->
+<a href="tel:2397785481" class="float-cta">
+  <span class="phone-icon">📞</span>
+  <span>(239) 778-5481</span>
+</a>
+
+<script>
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Mobile menu
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Lightbox
+  function openLightbox(src) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.submit-btn');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = '✓ Sent!';
+      document.getElementById('successMsg').style.display = 'block';
+      e.target.reset();
+      setTimeout(() => {
+        btn.textContent = 'Send Request →';
+        btn.disabled = false;
+        document.getElementById('successMsg').style.display = 'none';
+      }, 5000);
+    }, 1200);
+  }
+</script>
+</body>
+</html>
